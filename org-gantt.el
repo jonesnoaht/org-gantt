@@ -1478,12 +1478,12 @@ PARAMS determine several options of the gantt chart."
             (insert body))
           )))))
 
-(defun org-insert-dblock:org-gantt-chart (&optional filename)
+(defun org-insert-dblock:org-gantt-chart (filename)
   "Insert org-gantt dynamic block."
-  (interactive)
+  (interactive "FImage output filename: ")
   (org-create-dblock
    (list :name "org-gantt"
-         :file (or filename "data/images/project-gantt-chart.png")
+         :file filename
          :imagemagick t
          :tikz-options "scale=1.5, every node/.style={scale=1.5}"
          :weekend-style "{draw=blue!10, line width=1pt}"
